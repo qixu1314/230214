@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="UTF-8">
+<head>
+	<meta name="title" content="旭哥">
+	<link rel="icon" type="image/x-icon" href="./icons/icon1.jpg">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">##</span><br />
+				<span class="comments"># 作为小白程序猿,</span><br />
+				<span class="comments"># 我想以这种形式记录我们之间的故事.</span><br />
+				<span class="comments">##</span><br />
+				i = Boy(<span class="string">"旭哥"</span>);<br />
+				u = Girl(<span class="string">"琦琦"</span>);<br />
+				<span class="comments"># 22.12.13, 我们因为很多偶然相遇. </span><br />
+				i.meet(u)<br />
+				<span class="comments"># 之后几天我们发现了很多两个人之间的惊喜. </span><br />
+				i.confess(u)<br />
+				<span class="comments"># 22.12.16, 你答应了我发出的一个看似不大的邀请——“我想和你一直走下去”;</span><br />
+				u.accepted(i)<br />
+				<span class="comments"># 那晚看着你写的纸条我的心咕咚咕咚跳了半天.</span><br />
+				happy(u, i)<br />
+				<span class="comments"># 六十多天来我们不断靠近彼此，纵使相隔了千里;</span><br />
+				approaching(u, i)<br />
+				<span class="comments"># 将近一千四百多小时里我们不断向彼此分享自己;</span><br />
+				sharing(u, i)<br />
+				<span class="comments"># 我发现，当两颗炙热的心靠在了一起，眼里的世界都充满了粉红色的小心心.</span><br />
+				while <span class="keyword">True</span>:<br />
+				<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br />
+				<span class="placeholder"></span><span class="placeholder"></span>u = everything<br />
+				<span class="placeholder"></span><span class="keyword">else</span>:<br />
+				<span class="placeholder"></span><span class="placeholder"></span>everything = u<br />
+				<span class="comments"># 当你看到这里的时候，应该已经是2.14的下午了吧.</span><br />
+				celebrate_valentine_day(u, i)<br />
+				<span class="comments"># 我应该在去上课的路上，没能陪在你身边;</span><br />
+				<span class="comments"># 好事多磨，那就把这美好的初次见面留给阳光明媚的周末吧！</span><br />
+				happy_weekends(u, i)<br />
+				<span class="comments"># 收到给你买的花花，记得拍几张美美的照片噢（这里替我拜托你的好朋友啦）.</span><br />
+				photo(u, i)<br />
+				<span class="comments"># 这个网页是一个原型，后面我会在里面装满只属于我们两个人的回忆;</span><br />
+				<span class="comments"># 嘿嘿一起来记录属于我们独一无二的日子吧&#128538!</span><br />
+				continue<br />
+				<!-- <span class="comments"># Waiting me marries you, we will be the happiest couple in the
+					world.</span><br /> -->
+				<!-- i.marry(u, in_the_future=<span class="keyword">True</span>)<br />
+				i.live_happily_forever_with(u)<br /> -->
+				<!-- <span class="comments"># .</span><br /> -->
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Qiqi, I have fall in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love you forever!<br />
+						<div class="signature"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2023 <a href='http://qixu1314.github.io'>qixu1314.github.io</a> 2022-2023
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+		together.setFullYear(2022, 11, 15);
+		together.setHours(21);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+			document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+
+</html>
