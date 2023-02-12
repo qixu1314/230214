@@ -68,10 +68,10 @@ body {
     float: left;
     width: 440px;
     margin-top: 60px !important;
-    height: 480px;
+    height: 400px;
     color: #333;
     font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
-    font-size: 13px
+    font-size: 12px
 }
 
 #code .string {
